@@ -1,0 +1,23 @@
+
+<% if(weatherData){ %> 
+<div class="container mt-3">
+    <div class="col-md-12">
+        <div class="h-100 p-5 text-white bg-dark rounded-3 text-center">
+            <h3> <%= weatherData.name %> </h3>
+            <h1><%= weatherData.main.temp %>°</h1>
+            <p><%= weatherData.weather[0].description %> </p>
+            <p> H:<%= weatherData.main.temp_max %>°  L:<%= weatherData.main.temp_min %>° </p>
+            <img src="http://openweathermap.org/img/wn/<%= weatherData.weather[0].icon %>@2x.png" alt="<%= weatherData.weather[0].description %>">
+        </div>
+    </div>
+</div>
+<% } else { %> 
+    <div class="container mt-3">
+        <div class="col-md-12">
+            <div class="h-100 p-5 text-white bg-dark rounded-3 text-center">
+                <h3> Enter a zip code in the search box to begin. </h3>
+            </div>
+        </div>
+    </div>
+
+<% } %> 
